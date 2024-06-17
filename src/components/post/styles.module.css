@@ -1,0 +1,88 @@
+:root {
+    --bg-gray: #363636;
+    --accent: #226260;
+}
+
+.container {
+    width: clamp(320px, 80vw, 600px);
+    min-height: 220px;
+    position: relative;
+}
+
+.card {
+    
+    border: 1px solid var(--bg-gray);
+    padding: 15px;
+    border-radius: 25px 25px 5px 5px;
+    box-shadow: 1px 1px 5px #151515;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header img {
+    max-width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+article {
+    margin: 15px 0;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+    min-height: 50px;
+    padding: 5px 15px 5px 5px;
+    border: 1px solid var(--bg-gray);
+    border-radius: 5px 5px 25px 25px;
+}
+
+footer:hover {
+    
+}
+
+.inputSection {
+    display: flex;
+    width: 200px;
+    position: relative;
+
+    transition: 0.5s all;
+}
+
+footer:hover .inputSection {
+    width: 75%;
+}
+
+input {
+    width: 100%;
+    border-radius: 45px;
+    background: var(--bg-gray);
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    min-height: 45px;
+}
+
+button {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    border-radius: 45px;
+    border: none;
+    outline: none;
+    min-height: 37px;
+    aspect-ratio: 1;
+    background: transparent;
+}
+
+button:hover {
+    background-color: var(--accent);
+}
