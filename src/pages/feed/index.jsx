@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Post } from '../../components/post'
+import { Post } from '../../components/Post'
 
 export const Feed = () => {
   
@@ -48,7 +48,7 @@ export const Feed = () => {
       </div>
 
         {
-          posts?.map(data => (<Post data={data} />))
+          posts?.map(data => (<Post key={data?.id} data={data} />))
         }
     </div>
   )

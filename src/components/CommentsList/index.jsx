@@ -25,7 +25,7 @@ export const CommentsList = ({ comments }) => {
       <section id="comments-list" className={styles.commentsList}>
           {
               comments?.map((data => (
-                <div className={styles.comment}>
+                <div key={data?.id} className={styles.comment}>
                   <header className={styles.commentHeader}>
                       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4pzhDzR7YNDkT7hO4cunLpwS-LjFgZaE44g&s" />
                       <h3>{ data?.authorId }</h3>

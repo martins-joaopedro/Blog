@@ -1,6 +1,6 @@
-import { Layout } from '../components/layout'
-import { Home } from '../pages/home'
-import { Feed } from '../pages/feed'
+import { Layout } from '../components/Layout'
+import { Home } from '../pages/Home'
+import { Feed } from '../pages/Feed'
 
 function App() {
 
