@@ -7,3 +7,10 @@
 html {
     background-color: #121212;
 }
+
+:root {
+    --bg-gray: #363636;
+    --accent: #405c75;
+    --bg-blue: #252a2f;
+    --text: #dcdcdc;
+}

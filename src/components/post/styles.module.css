@@ -1,13 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root {
-    --bg-gray: #363636;
-    --accent: #405c75;
-    --bg-blue: #252a2f;
-    --text: #dcdcdc;
-}
-
-
 .container {
     width: clamp(320px, 80vw, 600px);
     min-height: 220px;
@@ -16,17 +8,12 @@
 }
 
 .card {
-    
     border: 1px solid var(--bg-gray);
-    
-    border-radius: 25px 25px 5px 5px;
+    border-radius: 25px;
     box-shadow: 1px 1px 5px #151515;
-
-    
-    height: 100%;
 }
 
-header {
+.card .postHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,31 +22,32 @@ header {
     background-color: var(--bg-blue);
     border-radius: 25px 25px 0px 0px;
     position: relative;
+    background: linear-gradient(-5deg, var(--bg-blue), var(--bg-gray));
 }
 
-header img {
+.card .postHeader img {
     max-width: 50px;
     aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
 }
 
-header section {
+.card .postHeader section {
     display: flex;
     gap: 15px;
 }
 
-header .informations {
+.card .postHeader .informations {
     display: flex;
     flex-direction: column;
     gap: 0px;
 }
 
-header .informations small {
+.card .postHeader .informations small {
     opacity: 0.8;
 }
 
-header .link {
+.card .postHeader .link {
     background-color: rgb(60, 111, 145);
     width: 35px;
     border-radius: 50%;
@@ -74,40 +62,37 @@ header .link {
     opacity: 0.5;
 }
 
-article {
+.card article {
     padding: 10px;
     font-size: 0.85rem;
+    border-bottom: 1px solid var(--bg-gray);
 }
 
-article p {
+.card article p {
     text-indent: 10px;
     margin-top: 5px;
 }
 
 .commentsList {
-    margin: 2px 0;
-    border: 1px solid var(--bg-gray);
-    border-radius: 5px;
+    
 }
 
-footer {
+.card footer {
+    padding: 10px;
+    
+    justify-content: space-between;
+    min-height: 50px;
+    margin-top: 2px;
+}
+
+.card footer section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 50px;
-    padding: 10px;
-    border: 1px solid var(--bg-gray);
-    border-radius: 5px 5px 25px 25px;
 }
 
-footer span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    opacity: 0.8;
-}
-
-.inputSection {
+.input {
+    margin: 10px 0;
     display: flex;
     align-items: center;
     width: 100%;
@@ -116,7 +101,7 @@ footer span {
     position: relative;
 }
 
-footer[texting = true] span {
+.card footer[texting = true] .comments {
     display: none;
 }
 
@@ -134,8 +119,8 @@ textarea {
 }
 
 textarea:is(:focus) {
-    background-color: #5050504e;
-    border-radius: 15px;
+    background-color: var(--bg-gray);
+    border-radius: 10px;
 }
 
 textarea::-webkit-scrollbar {
@@ -168,3 +153,11 @@ textarea::-webkit-scrollbar {
 .submit[show = true] {
     opacity: 1;
 }
+
+.comments {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.8;
+}
+
