@@ -1,55 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import { Post } from '../../components/Post'
+import { useState } from "react";
+import { Post } from "../../components/Post";
+import { useQuery } from "@tanstack/react-query";
+import postService from "../../services/postService";
 
 export const Feed = () => {
-  
-  const [posts, setPosts] = useState([])
+  const [posts, setPosts] = useState([]);
 
-  useEffect(() => {
-    
-    getPosts()
-  }, [])
+  const handleGetPosts = async () => {
+    const res = await postService.findAll();
+    setPosts(res);
+  };
 
-  const getPosts = async () => {
-    const data = await fetchPosts();
-    setPosts(data)
-  }
-
-  const fetchPosts = async () => {
-    const data = await fetch("https://blogapi-mqr3.onrender.com/post")
-    const json = await data.json()
-    console.log(json)
-    return json
-  }
-
-  const sendPost = () => {
-    const { value } = document.querySelector("#post-input")
-    
-    let body = {
-        authorId: "joao",
-        text: value
-    }
-
-    fetch("https://blogapi-mqr3.onrender.com/post", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body)
-    })
-  }
+  const postsQuery = useQuery({
+    queryKey: ["getPosts"],
+    queryFn: handleGetPosts,
+  });
 
   return (
     <div>
-      <div>
-
-        <input id="post-input" /> 
-        <button onClick={() => sendPost()} />
-      </div>
-
-        {
-          posts?.map(data => (<Post key={data?.id} data={data} />))
-        }
+      {posts?.map((data) => (
+        <Post key={data?.id} data={data} />
+      ))}
     </div>
-  )
-}
+  );
+};
