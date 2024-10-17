@@ -16,13 +16,13 @@ export const CommentsList = ({ comments }) => {
 
   return (
     <> 
-      <div id="controller" className={styles.commentsController}>
+      <div istoggled={isToggled.toString()} id="controller" className={styles.commentsController}>
           <MdOutlineExpandMore className={styles.toggleIcon} />
           <button className={styles.toggleComments} onClick={toggleComments}>
               { isToggled ? "ver todos" : "ocultar"} 
           </button>
       </div>
-      <section id="comments-list" className={styles.commentsList}>
+      <section istoggled={isToggled.toString()} id="comments-list" className={styles.commentsList}>
           {
               comments?.map((data => (
                 <div key={data?.id} className={styles.comment}>

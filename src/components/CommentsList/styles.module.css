@@ -34,7 +34,7 @@
     transition: 0.5s ease;
 }
 
-.commentsController[isToggled = true] .toggleIcon {
+.commentsController[istoggled = true] .toggleIcon {
     transform: rotate(180deg);
 }
 
@@ -55,7 +55,7 @@
     -webkit-mask: linear-gradient(0deg, transparent 10%,  black 100%);
 }
 
-.commentsList[isToggled = true] {
+.commentsList[istoggled = true] {
     height: 380px;
     overflow-y: scroll;
     -webkit-mask: linear-gradient(0deg, transparent, black 0%);
