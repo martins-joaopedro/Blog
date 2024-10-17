@@ -1,6 +1,5 @@
 .container {
-    width: clamp(320px, 80vw, 600px);
-    min-height: 220px;
+    width: clamp(320px, 100%, 800px);
     position: relative;
 }
 
@@ -24,7 +23,8 @@
 }
 
 .card .postHeader img {
-    max-width: 50px;
+    width: 35px;
+    height: 35px;
     aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
@@ -39,6 +39,7 @@
     display: flex;
     flex-direction: column;
     gap: 0px;
+    font-size: 0.8rem;
 }
 
 .card .postHeader .informations small {
@@ -61,21 +62,17 @@
 }
 
 .card article {
-    padding: 10px;
+    padding: 5px;
     font-size: 0.85rem;
     border-bottom: 1px solid var(--bg-gray);
 }
 
 .card article p {
     text-indent: 10px;
-    margin-top: 5px;
 }
-
-
 
 .card footer {
     padding: 10px;
-    
     justify-content: space-between;
     min-height: 50px;
     margin-top: 2px;

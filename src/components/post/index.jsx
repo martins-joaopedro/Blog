@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
 import { IoIosArrowForward } from "react-icons/io";
 import { FaRegComments } from "react-icons/fa6";
@@ -10,9 +10,14 @@ import { CommentsList } from '../CommentsList';
 
 export const Post = ({ data }) => {
     
-    const handleInput = (e) => {
-        document.querySelector("#submit").setAttribute("show", e.target.value != "")
-        document.querySelector("#footer").setAttribute("texting", e.target.value != "")
+    const [show, setShow] = useState(false);
+    const [texting, setTexting] = useState(false);
+
+    const handleInput = ({ target }) => {
+        
+        let cond = target.value != ""
+        setShow(cond)
+        setTexting(cond)
     }
 
     const handleHeight = (e) => {
@@ -59,13 +64,15 @@ export const Post = ({ data }) => {
                     {data?.text}
                 </p>
             </article>
-            <footer id="footer">
+            <footer 
+                texing={texting.toString()}
+            >
                 <CommentsList comments={data?.comments} />
             
                 <section className={styles.inputSection} >
                     <div className={styles.input}>
                         <textarea id="input" onChange={handleInput} onKeyUp={handleHeight} placeholder='deixe aqui seu comentário'/>
-                        <button id="submit" className={styles.submit} onClick={() => postComment(data?.id)}>
+                        <button show={show.toString()} className={styles.submit} onClick={() => postComment(data?.id)}>
                             <IoIosArrowForward />
                         </button>    
                     </div>

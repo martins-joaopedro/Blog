@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Post } from "../../components/Post";
 import { useQuery } from "@tanstack/react-query";
 import postService from "../../services/postService";
+import styles from './styles.module.css'
 
 export const Feed = () => {
   const [posts, setPosts] = useState([]);
@@ -17,7 +18,7 @@ export const Feed = () => {
   });
 
   return (
-    <div>
+    <div className={styles.container}>
       {posts?.map((data) => (
         <Post key={data?.id} data={data} />
       ))}
